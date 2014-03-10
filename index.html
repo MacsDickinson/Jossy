@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Jossy</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css' />
+        <script>
+        <!-- JQUERY FOR SLIDING NAVIGATION -->
+        $(document).ready(function() {
+        $('a[href*=#]').each(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && this.hash.replace(/#/,'') ) {
+        var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+        var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+        if ($target) {
+        var targetOffset = $target.offset().top;
+        <!-- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV -->
+        $(this).click(function() {
+        $("#nav li a").removeClass("active");
+        $(this).addClass('active');
+        $('html, body').animate({scrollTop: targetOffset}, 1000);
+        return false;
+        });
+        }
+        }
+        });
+        });
+        </script>
+    </head>
+    <body>
+    <input type="hidden" id="audio-selected" />
+    <audio id="audio">
+      <source id="source" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+        <!-- HEADER START -->
+        <header id="header">
+            <div class="content">
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#" id="skip-back"><i class="fa fa-step-backward"></i></a></li>
+                        <li class="hidden"><a href="#" id="play"><i class="fa fa-play"></i> Play</a></li>
+                        <li><a href="#" id="pause"><i class="fa fa-pause"></i> Pause</a></li>
+                        <li><a href="#" id="skip-next"><i class="fa fa-step-forward"></i></a></li>
+                        <li><a href="#" id="song-name"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- HEADER END -->
+        <!-- SLIDES START -->
+        <div id="slide1">
+            <div class="content">
+                <h1>HAPPY BIRTHDAY</h1>
+                <h2>JOSSKIN BACH</h2>
+            </div>
+        </div>
+        <div id="slide2">
+            <div class="content" >
+                <div class="quotes_container">
+                    <h3 class="quotes">“Then the Grinch thought of something he hadn't before! What if Christmas, he thought, doesn't come from a store. What if Christmas...perhaps...means a little bit more!”</h3>
+                    <img src="img/dr-seuss.png" align="left"/> <h4 class="author_name_gray">Dr. Seuss </h4>
+                </div>
+            </div>
+        </div>
+        <div id="slide3">
+        </div>
+        <div id="slide4">
+            <div class="content">
+                <div class="quotes_container">
+                    <h3 class="quotes">“Christmas doesn't come from a store, maybe Christmas perhaps means a little bit more....” </h3>
+                    <img src="img/dr-seuss.png" align="left"/> <h4 class="author_name_gray">Dr. Seuss </h4>
+                </div>
+            </div>
+        </div>
+        <div id="slide5">
+        </div>
+        <div id="slide6">
+            <div class="content">
+                <div class="quotes_container">
+                    <h3 class="quotes">“Christmas doesn't come from a store, maybe Christmas perhaps means a little bit more....” </h3>
+                    <img src="img/dr-seuss.png" align="left"/> <h4 class="author_name_gray">Dr. Seuss </h4>
+                </div>
+            </div>
+        </div>
+        <div id="slide7">
+        </div>
+        <div id="slide8">
+            <div class="content">
+                <div class="quotes_container">
+                    <h3 class="quotes">“Christmas doesn't come from a store, maybe Christmas perhaps means a little bit more....” </h3>
+                    <img src="img/dr-seuss.png" align="left"/> <h4 class="author_name_gray">Dr. Seuss </h4>
+                </div>
+            </div>
+        </div>
+        <div id="slide9">
+        </div>
+        <div id="slide10">
+            <div class="content">
+                <div class="quotes_container">
+                    <h3 class="quotes">Happy Birthday Bra!</h3>
+                    <a href="#slide1" >Back To Top</a>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDES END -->
+        <script type="text/javascript">
+            songs = [
+                {
+                    id: 0,
+                    path: 'audio/JxlfNJ6KHQvw.128.mp3',
+                    name: 'Selena Gomez - Birthday'
+                },
+                {
+                    id: 1,
+                    path: 'audio/2ZB8DC6BV2Aw.128.mp3',
+                    name: '2 Chainz - Birthday Song ft. Kanye West'
+                }
+            ];
+            function loadSong(id) {
+                var song = songs[id];
+                var audio = document.getElementById("audio");
+                audio.pause();
+                source = $('#source');
+                source.attr("src", song.path).appendTo(source.parent());
+                $('#audio').attr('song-id', song.id);
+                $('#song-name').text(song.name);
+                audio.load();
+                play();
+            }
+            function pause() {
+                document.getElementById("audio").pause();
+                $('#pause').parent().addClass('hidden');
+                $('#play').parent().removeClass('hidden');
+            }
+            function play() {
+                document.getElementById("audio").play();
+                $('#play').parent().addClass('hidden');
+                $('#pause').parent().removeClass('hidden');
+            }
+            $(function() {
+                loadSong(0);
+                $('#play').click(function() {
+                    play();
+                });
+                $('#pause').click(function() {
+                    pause();
+                });
+                $('#song-name').click(function() {
+                    if ($('#play').parent().hasClass('hidden')) {
+                        pause();
+                    }
+                    else {
+                        play();
+                    }
+                });
+                $('#skip-next').click(function() {
+                    var current = $('#audio').attr('song-id');
+                    var next = (parseInt(current) + 1) % 2;
+                    loadSong(next);
+                });
+                $('#skip-back').click(function() {
+                });
+            });
+        </script>
+    </body>
+</html>
