@@ -181,12 +181,11 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 }
 
 #slide7{
-	background: url(../img/Joss/315908_10151628309062429_862862998_n.jpg) 50% 0 no-repeat fixed;
+	background: url(../img/cats.png) 50% 0 repeat fixed;
 	height: 200px;
 	margin: 0 auto;
 	padding: 250px 0;
 	color: #fff;
-	background-size: cover;
 }
 
 #slide8{
