@@ -13,157 +13,174 @@
         <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css' />
         <script>
         <!-- JQUERY FOR SLIDING NAVIGATION -->
-        $(document).ready(function() {
-        $('a[href*=#]').each(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && this.hash.replace(/#/,'') ) {
-        var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
-        var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
-        if ($target) {
-        var targetOffset = $target.offset().top;
-        <!-- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV -->
-        $(this).click(function() {
-        $("#nav li a").removeClass("active");
-        $(this).addClass('active');
-        $('html, body').animate({scrollTop: targetOffset}, 1000);
-        return false;
-        });
-        }
-        }
-        });
+        $(document).ready(function () {
+            $('a[href*=#]').each(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname && this.hash.replace(/#/, '')) {
+                    var $targetId = $(this.hash),
+                        $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
+                    var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+                    if ($target) {
+                        var targetOffset = $target.offset().top;
+                        <!-- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV -->
+                        $(this).click(function () {
+                            $("#nav li a").removeClass("active");
+                            $(this).addClass('active');
+                            $('html, body').animate({
+                                scrollTop: targetOffset
+                            }, 1000);
+                            return false;
+                        });
+                    }
+                }
+            });
         });
         </script>
     </head>
     <body>
-    <input type="hidden" id="audio-selected" />
-    <audio id="audio">
-      <source id="source" type="audio/mpeg">
-    Your browser does not support the audio element.
-    </audio>
+        <input type="hidden" id="audio-selected" />
+        <audio id="audio">
+        <source id="source" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
         <!-- HEADER START -->
         <header id="header">
             <div class="content">
                 <nav id="nav">
                     <ul>
-                        <li><a href="#" id="skip-back"><i class="fa fa-step-backward"></i></a></li>
-                        <li class="hidden"><a href="#" id="play"><i class="fa fa-play"></i> Play</a></li>
-                        <li><a href="#" id="pause"><i class="fa fa-pause"></i> Pause</a></li>
-                        <li><a href="#" id="skip-next"><i class="fa fa-step-forward"></i></a></li>
-                        <li><a href="#" id="song-name"></a></li>
+                        <li><a id="skip-back"><i class="fa fa-step-backward"></i></a></li>
+                        <li class="hidden"><a id="play"><i class="fa fa-play"></i> Play</a></li>
+                        <li><a id="pause"><i class="fa fa-pause"></i> Pause</a></li>
+                        <li><a id="skip-next"><i class="fa fa-step-forward"></i></a></li>
+                        <li><a id="song-name"></a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <!-- HEADER END -->
         <!-- SLIDES START -->
-        <div id="slide1">
+        <div id="slide1" class="clear">
             <div class="content">
                 <h1>HAPPY BIRTHDAY</h1>
                 <h2>JOSSKIN BACH</h2>
+                <h3><a href="#slide2"><i class="fa fa-arrow-circle-down"></i> Next</a></h3>
             </div>
         </div>
-        <div id="slide2">
+        <div id="slide2" class="opaque">
             <div class="content" >
                 <div class="quotes_container">
-                    <h3 class="quotes">Blurb about Joss</h3>
+                    <h2 class="quotes">Happy birthday to you big brother!</h2>
+                    <h2 class="quotes">You're all grown up and professional now.</h2>
                 </div>
+                <h3><a href="#slide4"><i class="fa fa-arrow-circle-down"></i> Next</a></h3>
             </div>
         </div>
-        <div id="slide3">
+        <div id="slide3" class="clear">
         </div>
-        <div id="slide4">
+        <div id="slide4" class="opaque">
             <div class="content">
                 <div class="quotes_container">
-                    <h3 class="quotes">Aint he all grown up... </h3>
+                    <h2 class="quotes">Trotting around the globe and living it up in Miami.</h2>
                 </div>
+                <h3><a href="#slide6"><i class="fa fa-arrow-circle-down"></i> Next</a></h3>
             </div>
         </div>
-        <div id="slide5">
+        <div id="slide5" class="clear">
         </div>
-        <div id="slide6">
+        <div id="slide6" class="opaque">
             <div class="content">
                 <div class="quotes_container">
-                    <h3 class="quotes">He does like his cats</h3>
+                    <h2 class="quotes">And you've been gallivanting around the globe.</h2>
                 </div>
+                <h3><a href="#slide8"><i class="fa fa-arrow-circle-down"></i> Next</a></h3>
             </div>
         </div>
-        <div id="slide7">
-        </div>
-        <div id="slide8">
+        <div id="slide7" class="clear">
             <div class="content">
-                <div class="quotes_container">
-                    <h3 class="quotes">But he'll always be runty</h3>
-                </div>
             </div>
         </div>
-        <div id="slide9">
-        </div>
-        <div id="slide10">
+        <div id="slide8" class="opaque">
             <div class="content">
                 <div class="quotes_container">
-                    <h3 class="quotes">Happy Birthday Bro!</h3>
-                    <a href="#slide1" >Back To Top</a>
+                    <h2 class="quotes">But don't forget that you'll always be runty!</h2>
+                </div>
+                <h3><a href="#slide10"><i class="fa fa-arrow-circle-down"></i> Next</a></h3>
+            </div>
+        </div>
+        <div id="slide9" class="clear">
+        </div>
+        <div id="slide10" class="opaque">
+            <div class="content">
+                <div class="quotes_container">
+                    <h2 class="quotes">Lots of Love,</h2>
+                    <h2><a href="http://www.macsdickinson.com" target="_blank">Macs</a> and <a href="http://rebeccaelvin.wordpress.com/" target="_blank">Bex</a></h2>
+                    <h3><a href="#slide1"><i class="fa fa-arrow-circle-up"></i> Back To Top</a></h3>
                 </div>
             </div>
         </div>
         <!-- SLIDES END -->
         <script type="text/javascript">
-            songs = [
-                {
-                    id: 0,
-                    path: 'audio/JxlfNJ6KHQvw.128.mp3',
-                    name: 'Selena Gomez - Birthday'
-                },
-                {
-                    id: 1,
-                    path: 'audio/2ZB8DC6BV2Aw.128.mp3',
-                    name: '2 Chainz - Birthday Song ft. Kanye West'
-                }
-            ];
-            function loadSong(id) {
-                var song = songs[id];
-                var audio = document.getElementById("audio");
-                audio.pause();
-                source = $('#source');
-                source.attr("src", song.path).appendTo(source.parent());
-                $('#audio').attr('song-id', song.id);
-                $('#song-name').text(song.name);
-                audio.load();
-                play();
-            }
-            function pause() {
-                document.getElementById("audio").pause();
-                $('#pause').parent().addClass('hidden');
-                $('#play').parent().removeClass('hidden');
-            }
-            function play() {
-                document.getElementById("audio").play();
-                $('#play').parent().addClass('hidden');
-                $('#pause').parent().removeClass('hidden');
-            }
-            $(function() {
-                loadSong(0);
-                $('#play').click(function() {
-                    play();
-                });
-                $('#pause').click(function() {
-                    pause();
-                });
-                $('#song-name').click(function() {
-                    if ($('#play').parent().hasClass('hidden')) {
-                        pause();
-                    }
-                    else {
-                        play();
-                    }
-                });
-                $('#skip-next').click(function() {
-                    var current = $('#audio').attr('song-id');
-                    var next = (parseInt(current) + 1) % 2;
-                    loadSong(next);
-                });
-                $('#skip-back').click(function() {
-                });
+        songs = [{
+            id: 0,
+            path: 'audio/JxlfNJ6KHQvw.128.mp3',
+            name: 'Selena Gomez - Birthday'
+        }, {
+            id: 1,
+            path: 'audio/2ZB8DC6BV2Aw.128.mp3',
+            name: '2 Chainz - Birthday Song ft. Kanye West'
+        }];
+
+        function loadSong(id) {
+            var song = songs[id];
+            var audio = document.getElementById("audio");
+            audio.pause();
+            source = $('#source');
+            source.attr("src", song.path).appendTo(source.parent());
+            $('#audio').attr('song-id', song.id);
+            $('#song-name').text(song.name);
+            audio.load();
+            play();
+        }
+
+        function pause() {
+            document.getElementById("audio").pause();
+            $('#pause').parent().addClass('hidden');
+            $('#play').parent().removeClass('hidden');
+        }
+
+        function play() {
+            document.getElementById("audio").play();
+            $('#play').parent().addClass('hidden');
+            $('#pause').parent().removeClass('hidden');
+        }
+        $(function () {
+            $('#myAudio').on('ended', function() {
+               $('#skip-next').click();
             });
+            loadSong(0);
+            $('#play').click(function () {
+                play();
+            });
+            $('#pause').click(function () {
+                pause();
+            });
+            $('#song-name').click(function () {
+                if ($('#play').parent().hasClass('hidden')) {
+                    pause();
+                } else {
+                    play();
+                }
+            });
+            $('#skip-next').click(function () {
+                var current = $('#audio').attr('song-id');
+                var next = (parseInt(current) + 1) % 2;
+                loadSong(Math.abs(next));
+            });
+            $('#skip-back').click(function () {
+                var current = $('#audio').attr('song-id');
+                var next = (parseInt(current) - 1) % 2;
+                loadSong(Math.abs(next));
+            });
+        });
         </script>
     </body>
 </html>
