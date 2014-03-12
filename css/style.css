@@ -133,7 +133,7 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 	margin: 0;
 	padding: 200px 0 260px 0;
 	color: #fff;
-	height: 600px;
+	height: 450px;
 }
 
 .opaque {
@@ -163,7 +163,7 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 }
 
 #slide5{
-	background: url(../img/Joss/402968_10152081125025713_2128474428_n.jpg) 50% 0 no-repeat fixed;
+	/*background: url(../img/Joss/402968_10152081125025713_2128474428_n.jpg) 50% 0 no-repeat fixed;*/
 	background-size: cover;
 }
 
@@ -172,15 +172,23 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 
 #slide7{
 	background: url(../img/cats.png) 50% 0 repeat fixed;
-	height: 200px;
+	height: 300px;
+	padding: 0;
 }
 
 #slide8 {
+	height: 200px;
 }
 
 #slide9{
-	background: url(../img/Joss/315908_10151628309062429_862862998_n.jpg) 50% 0 no-repeat fixed;
+	background-color: #fff;
+	/*background: url(../img/Joss/5DEBDD9F-6EC9-4BAB-B923-C5CA96B70A87.jpg) 50% 0 no-repeat fixed;*/
+	/*background: url(../img/Joss/0CBCA410-FC5F-43BE-BF19-ACEF16F9F770.jpg) 50% 0 no-repeat fixed;*/
+	/*background: url(../img/Joss/17C3BC5E-848E-4355-A520-7D792F67831B.jpg) 50% 0 no-repeat fixed;*/
+	/*background: url(../img/Joss/315908_10151628309062429_862862998_n.jpg) 50% 0 no-repeat fixed;*/
+	/*background: url(../img/Joss/18382762-ECC2-4EDA-B3C4-DCAFBEA1B6FB.jpg) 50% 0 no-repeat fixed;*/
 	background-size: cover;
+	padding: 0;
 }
 
 #slide10{
@@ -206,4 +214,40 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
     display:block;
     width:100%;
     height:auto;
+    display:block; position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%;
+}
+
+/* rslides
+*/
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 500px;
+}
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
 }

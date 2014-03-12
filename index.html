@@ -4,37 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jossy</title>
         <link rel="stylesheet" href="css/style.css"/>
-        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css' />
-        <script>
-        <!-- JQUERY FOR SLIDING NAVIGATION -->
-        $(document).ready(function () {
-            $('a[href*=#]').each(function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname && this.hash.replace(/#/, '')) {
-                    var $targetId = $(this.hash),
-                        $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
-                    var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
-                    if ($target) {
-                        var targetOffset = $target.offset().top;
-                        <!-- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV -->
-                        $(this).click(function () {
-                            $("#nav li a").removeClass("active");
-                            $(this).addClass('active');
-                            $('html, body').animate({
-                                scrollTop: targetOffset
-                            }, 1000);
-                            return false;
-                        });
-                    }
-                }
-            });
-        });
-        </script>
     </head>
     <body>
         <input type="hidden" id="audio-selected" />
@@ -89,7 +65,7 @@
         <div id="slide6" class="opaque">
             <div class="content">
                 <div class="quotes_container">
-                    <h2 class="quotes">And you've been gallivanting around the globe.</h2>
+                    <h2 class="quotes">But some things never change.</h2>
                 </div>
                 <h3><a href="#slide8"><i class="fa fa-arrow-circle-down"></i> Next</a></h3>
             </div>
@@ -101,12 +77,19 @@
         <div id="slide8" class="opaque">
             <div class="content">
                 <div class="quotes_container">
-                    <h2 class="quotes">But don't forget that you'll always be runty!</h2>
+                    <h2 class="quotes">You'll always be runty at heart!</h2>
                 </div>
                 <h3><a href="#slide10"><i class="fa fa-arrow-circle-down"></i> Next</a></h3>
             </div>
         </div>
         <div id="slide9" class="clear">
+            <ul class="rslides">
+              <li><img src="img/Joss/5DEBDD9F-6EC9-4BAB-B923-C5CA96B70A87.jpg" alt=""></li>
+              <li><img src="img/Joss/0CBCA410-FC5F-43BE-BF19-ACEF16F9F770.jpg" alt=""></li>
+              <li><img src="img/Joss/17C3BC5E-848E-4355-A520-7D792F67831B.jpg" alt=""></li>
+              <li><img src="img/Joss/18382762-ECC2-4EDA-B3C4-DCAFBEA1B6FB.jpg" alt=""></li>
+              <li><img src="img/Joss/315908_10151628309062429_862862998_n.jpg" alt=""></li>
+            </ul>
         </div>
         <div id="slide10" class="opaque">
             <div class="content">
@@ -118,6 +101,9 @@
             </div>
         </div>
         <!-- SLIDES END -->
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/responsiveslides.min.js"></script>
+        <script type="text/javascript" src="js/supersized.3.2.7.js"></script>
         <script type="text/javascript">
         songs = [{
             id: 0,
@@ -153,7 +139,8 @@
             $('#pause').parent().removeClass('hidden');
         }
         $(function () {
-            $('#myAudio').on('ended', function() {
+            $(".rslides").responsiveSlides();
+            $('#audio').on('ended', function() {
                $('#skip-next').click();
             });
             loadSong(0);
@@ -179,6 +166,44 @@
                 var current = $('#audio').attr('song-id');
                 var next = (parseInt(current) - 1) % 2;
                 loadSong(Math.abs(next));
+            });
+
+            $('a[href*=#]').each(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname && this.hash.replace(/#/, '')) {
+                    var $targetId = $(this.hash),
+                        $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
+                    var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+                    if ($target) {
+                        var targetOffset = $target.offset().top;
+                        <!-- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV -->
+                        $(this).click(function () {
+                            $("#nav li a").removeClass("active");
+                            $(this).addClass('active');
+                            $('html, body').animate({
+                                scrollTop: targetOffset
+                            }, 1000);
+                            return false;
+                        });
+                    }
+                }
+            });
+
+            $.supersized({
+                slide_interval: 1000,
+                transition: 1,
+                transition_speed: 1500,
+                slide_links: 'blank',
+                progress_bar: 1,
+                slides: [
+                    { image: 'img/Joss/402968_10152081125025713_2128474428_n.jpg'},
+                    { image: 'img/Joss/935072_10152776566905198_823478324_n.jpg'},
+                    { image: 'img/Joss/1150129_10153115976315713_78386413_n.jpg'},
+                    { image: 'img/Joss/922990_10100956722713789_868666708_n.jpg'},
+                    { image: 'img/Joss/52965_10151088037192681_908020562_o.jpg'},
+                    { image: 'img/Joss/31545_10151154598845785_1833562430_n.jpg'},
+                    { image: 'img/Joss/11506_516195356034_1393811511_n.jpg'},
+                    { image: 'img/Joss/466965_10152081124450713_597505496_o.jpg'}
+                ]
             });
         });
         </script>
