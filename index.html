@@ -167,12 +167,12 @@
             });
             $('#skip-next').click(function () {
                 var current = $('#audio').attr('song-id');
-                var next = (parseInt(current) + 1) % 2;
+                var next = (parseInt(current) + 1) % 4;
                 loadSong(Math.abs(next));
             });
             $('#skip-back').click(function () {
                 var current = $('#audio').attr('song-id');
-                var next = (parseInt(current) - 1) % 2;
+                var next = (parseInt(current) - 1) % 4;
                 loadSong(Math.abs(next));
             });
 
