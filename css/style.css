@@ -92,13 +92,33 @@ a:hover{ color: #333333; cursor: pointer; }
    font-weight: normal;
    font-size: 30px;
   text-align: left;
-  margin: 50px auto;
+  margin: 20px auto;
 }
-   
+
+.quotes.left {
+  text-align: left;
+}
+ 
+
+.quotes.right {
+  text-align: right;
+}
+
  .author_name_white { font-family:"Wellfleet";  margin: 70px 0 0 75px; color: #fff; font-size: 20px; }  
  .author_name_gray { font-family:"Wellfleet";  margin: 70px 0 0 75px; color: #94a4a4; font-size: 20px; }  
- .quotes_container { width: 800px; margin: 0 auto; }
+ .quotes_container { width: 800px; margin: 0 auto; padding: 20 0; }
+ .author_name_gray.left { text-align: left;}
+ .author_name_gray.right { text-align: right;}
 
+
+.circular {
+	width: 75px;
+	height: 75px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	margin: 0 20px;
+}
 
 
 /*= BUTTONS
@@ -189,9 +209,14 @@ ul.built { list-style: none; margin: 0 auto; width: 730px; }
 
 #slide10{
 	padding: 50px 0;
+	height: 150px;
 }
 
 
+#slide11{
+	height: 530px;
+	padding: none;
+}
 
 /*= FOOTER 
 --------------------------------------------------------*/
